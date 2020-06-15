@@ -9,6 +9,7 @@
 4.如果要在本地测试 需要一个 nginx 对其域名 www.askajohnny.com 进行转发到 本地 该项目的地址 
 
 
+
     server {
         listen       80;
       
@@ -23,16 +24,16 @@
                  proxy_set_header Upgrade $http_upgrade;
                  proxy_set_header Connection "upgrade";
               
-		             root /Users/johnny/FrontProject/VueProject/blogs2/dist;
+		 root /Users/johnny/FrontProject/VueProject/blogs2/dist;
                  try_files $uri /index.html;
         }
-
-   location /blogs{
+	location /blogs{
                        proxy_http_version 1.1;
                        proxy_set_header Host $host;
                        proxy_set_header X-Real-IP $remote_addr;
                        proxy_set_header Upgrade $http_upgrade;
                        proxy_set_header Connection "upgrade";
-			                 proxy_pass http://localhost:8080/justauth;
+		       proxy_pass http://localhost:8080/justauth;
          }
+
 
