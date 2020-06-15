@@ -6,7 +6,11 @@
 
 3.由于回调是地址是 在第三方开放平台上配置的 如QQ 这里 回调域： http://www.askajohnny.com/auth/qq   ，
 
-4.如果要在本地测试 需要一个 nginx 对其域名 www.askajohnny.com 进行转发到 本地 该项目的地址 
+
+本地测试:
+1.配置host 映射  127.0.0.1 www.askajohnny.com
+2.nginx 进行前端项目的配置 这里是Vue-cli创建的模板项目 
+3.location /blogs 将第三方回调请求转发到本地 justauth 项目
 
 
 
@@ -24,7 +28,7 @@
                  proxy_set_header Upgrade $http_upgrade;
                  proxy_set_header Connection "upgrade";
               
-		 root /Users/johnny/FrontProject/VueProject/blogs2/dist;
+		 root /Users/johnny/FrontProject/VueProject/vue-justauth-learn/dist; #这里的地址需要你自己配置 vue-justauth-learn 项目地址
                  try_files $uri /index.html;
         }
 	location /blogs{
