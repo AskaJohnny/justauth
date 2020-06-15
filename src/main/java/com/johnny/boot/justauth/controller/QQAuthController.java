@@ -36,6 +36,7 @@ public class QQAuthController {
 
     /**
      * 获取到 跳转到QQ登录的 URL 供前端 进行跳转，前端可以通过iframe 或者 模态框进行 展示页面
+     * 前后端分离项目
      * @param response
      * @return
      * @throws IOException
